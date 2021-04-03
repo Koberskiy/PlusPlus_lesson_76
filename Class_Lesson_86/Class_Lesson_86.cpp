@@ -71,8 +71,38 @@ private:
     }
 };
 
+class CoffeGrinder
+{
+private:
+    bool checkVoltage()
+    {
+        
+        
+        return true;
+    }
+
+public:
+    void Start()
+    {
+        bool voltageIsNormal = checkVoltage();
+
+        if (voltageIsNormal)
+        {
+            cout << "Vjuhhhh !!!" << endl;
+        }
+        else
+        {
+            cout << "Beep Beep !!!" << endl;
+        }
+    }
+
+};
+
 int main()
 {
+    CoffeGrinder a;
+    a.Start();
+    
     // inkapsulatsia
     Point objectA;
 
