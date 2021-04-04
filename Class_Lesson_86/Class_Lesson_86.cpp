@@ -104,32 +104,5 @@ public:
 
 int main()
 {
-    Point aPoint(4, 56);
-    aPoint.printXOption();
-
-    CoffeGrinder a;
-    a.Start();
     
-    // inkapsulatsia
-    Point objectA;
-
-    objectA.SetX(45);
-    objectA.SetY(6);
-
-    int result = objectA.GetX();
-    cout << "Result printing ..." <<result << endl;
-
-    objectA.printXOption();
-
-    ///======
-
-    Human firstHuman; // obect clasa Human - firstHuman
-    firstHuman.age = 30;
-    firstHuman.name = "Yarik";
-    firstHuman.weight = 90;
-
-   // firstHuman.printWeight();
-
-    Human secondHuman;
-    //secondHuman.printWeight();
 }
