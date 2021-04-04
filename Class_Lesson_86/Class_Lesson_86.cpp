@@ -30,6 +30,12 @@ public:
 class Point
 {
 public:
+    Point(int valueX, int valueY)
+    {
+        x = valueX;
+        y = valueY;
+    }
+
     int GetY()
     {
         return y;
@@ -76,8 +82,6 @@ class CoffeGrinder
 private:
     bool checkVoltage()
     {
-        
-        
         return true;
     }
 
@@ -100,6 +104,9 @@ public:
 
 int main()
 {
+    Point aPoint(4, 56);
+    aPoint.printXOption();
+
     CoffeGrinder a;
     a.Start();
     
