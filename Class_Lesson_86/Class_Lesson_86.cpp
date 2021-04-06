@@ -30,6 +30,12 @@ public:
 class Point
 {
 public:
+    Point()
+    {
+        x = 0;
+        y = 0;
+    }
+
     Point(int valueX, int valueY)
     {
         x = valueX;
@@ -57,7 +63,7 @@ public:
         x = valueX;
     }
 
-    void printXOption()
+    void printOption()
     {
         cout << "x= " << x << "\ty=" << y << endl;
     }
@@ -65,10 +71,10 @@ public:
 private:
     int x;
     int y;
-    int z;
+   // int z;
     void printPoint()
     {
-        cout << "point_X:" << x <<  "point_Z:" << z << endl;
+      //  cout << "point_X:" << x <<  "point_Z:" << z << endl;
     }
 
     void printPoint_Y()
@@ -104,5 +110,9 @@ public:
 
 int main()
 {
-    
+    Point a;
+    a.printOption();
+
+    Point b(4, 56);
+    b.printOption();
 }
