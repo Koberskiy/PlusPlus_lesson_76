@@ -102,8 +102,33 @@ public:
 
 };
 
+class MyClass
+{
+    int data;
+    public:
+        MyClass(int value)
+        {
+            data = value;
+            cout << "Objekt:" << data <<" KONSTRUCTOR STARTING....." << endl;
+        }
+
+        ~MyClass()
+        {
+            cout << "Objekt:" << data << " DESTRUKTOR FINISH ....." << endl;
+        }
+};
+
+void Foo()
+{
+    cout << "Start FOO ..." << endl;
+    MyClass a(1);
+    cout << "Finish FOO ..." << endl;
+}
+
 // ** Destructor **
 int main()
 {
-    
+    Foo();
+
+    return 0;
 }
