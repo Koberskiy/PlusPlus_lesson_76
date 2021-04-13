@@ -30,10 +30,18 @@ public:
 class Point
 {
 public:
+    Point()
+    {
+        x = 0;
+        y = 0;
+        cout << this << " constructor" << endl;
+    }
+    
     Point(int valueX, int valueY)
     {
         x = valueX;
         y = valueY;
+        cout << this << " constructor" << endl;
     }
 
     int GetY()
@@ -41,9 +49,9 @@ public:
         return y;
     }
     
-    void SetY(int valueY)
+    void SetY(int y)
     {
-        y = valueY;
+        this->y = y;
     }
     
     
@@ -104,5 +112,8 @@ public:
 
 int main()
 {
-   
+    Point a;
+    a.SetY(5);
+    a.printXOption();
+
 }
