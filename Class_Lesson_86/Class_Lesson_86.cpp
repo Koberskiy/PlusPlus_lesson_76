@@ -6,6 +6,43 @@
 
 using namespace std;
 
+// Konstruktor kopiyvanna
+
+class MyClass
+{
+public:
+    int *data;
+
+    MyClass(int size)
+    {
+        this->Size = size;
+        this->data = new int[size];
+
+        for (int i = 0; i < size; i++)
+        {
+            data[i] = i;
+        }
+
+        cout << "Vuzvav konsruktor " << this << endl;
+    };
+
+    MyClass(const MyClass &other)
+    {
+        this->data = new int[other.Size];
+        cout << "Vuzvav konsruktor kopiyvanna ..." << this << endl;
+    }
+
+    ~MyClass()
+    {
+        cout << "Vuzvalu destructor " << this << endl;
+        delete[] data;
+    };
+
+private:
+    int Size;
+
+};
+
 class Human
 {
     // tilo classa
@@ -102,34 +139,28 @@ public:
 
 };
 
+void functionFoo(MyClass value)
+{
+    cout << "Run function Foo.." << endl;
+}
+
+MyClass functionFoo2()
+{
+    cout << "Run function Foo_2.." << endl;
+    MyClass temp(2);
+
+    return temp;
+}
+
 int main()
 {
-    Point aPoint(4, 56);
-    aPoint.printXOption();
+    MyClass a(10);
 
-    CoffeGrinder a;
-    a.Start();
+    MyClass b(a);
+
+    //functionFoo(a);
     
-    // inkapsulatsia
-    Point objectA;
+    //functionFoo2();
 
-    objectA.SetX(45);
-    objectA.SetY(6);
-
-    int result = objectA.GetX();
-    cout << "Result printing ..." <<result << endl;
-
-    objectA.printXOption();
-
-    ///======
-
-    Human firstHuman; // obect clasa Human - firstHuman
-    firstHuman.age = 30;
-    firstHuman.name = "Yarik";
-    firstHuman.weight = 90;
-
-   // firstHuman.printWeight();
-
-    Human secondHuman;
-    //secondHuman.printWeight();
+    return 0;
 }
