@@ -6,40 +6,32 @@
 #include <string>
 
 using namespace std;
+const int arSize = 8;
 
 //==================================
 // prototype
-void n_chars(char, int);
-
+int sum_arr(int arr[], int n);
 
 //==================================
 // main
 int main()
 {
-	int times1 =0;
-	char ch;
+	int cookies[arSize] = {1,2,4,8,16,32,64,128};
+	int sum = sum_arr(cookies, arSize);
 
-	cout << "enter a character: ";
-	cin >> ch;
+	cout << "Total cookies eaten: " << sum << endl;
 
-	while (ch != 'q')
-	{
-		cout << "Enter en integer: ";
-		cin >> times1;
-		n_chars(ch, times1);
-		cout << "\nEnter other character or press the "" q-key to quit: ";
-		cin >> ch;
-	}
-
-	cout << "The value of times is " << times1 << ".\n";
-	cout << "Bye\n";
 	return 0;
 }
 
 //==================================
 // Opredilenie func
-void n_chars(char c, int n)
+int sum_arr(int arr[], int n)
 {
-	while (n-- > 0)
-		cout << c;
+	int total = 0;
+	for (int i = 0; i < n; i++)
+	{
+		total = total + arr[i];
+	}
+	return total;
 }
