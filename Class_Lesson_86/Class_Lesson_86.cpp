@@ -7,52 +7,39 @@
 
 using namespace std;
 
+//==================================
 // prototype
-void simple(); 
-void cherrs(int);
-double cube(double);
+void n_chars(char, int);
 
+
+//==================================
 // main
 int main()
 {
-	cout << "Main will call simple func" << endl;
-	simple();
-	cout << "Main finished - func" << endl;
-	
-	cout << "Give me a number" << endl;
-	cherrs(5);
-	
-	double side;
-	cin >> side;
-	double volume = cube(side);
-	
-	cout << "side = " << side << endl;
-	cout << "volume = " << volume << endl;
+	int times1 =0;
+	char ch;
 
-	cout << "A" << side << " -foot cube have a volume";
-	cout << volume << " cube feet.\n";
+	cout << "enter a character: ";
+	cin >> ch;
 
-	cherrs(cube(2));
+	while (ch != 'q')
+	{
+		cout << "Enter en integer: ";
+		cin >> times1;
+		n_chars(ch, times1);
+		cout << "\nEnter other character or press the "" q-key to quit: ";
+		cin >> ch;
+	}
+
+	cout << "The value of times is " << times1 << ".\n";
+	cout << "Bye\n";
 	return 0;
 }
 
 //==================================
 // Opredilenie func
-void simple()
+void n_chars(char c, int n)
 {
-	cout << "I am simple function" << endl;
-}
-
-void cherrs(int n)
-{
-	for (int i= 0; i < n; i++)
-	{
-		cout << "CHeers!";
-	}
-	cout << endl;
-}
-
-double cube(double x)
-{
-	return x * x * x;
+	while (n-- > 0)
+		cout << c;
 }
